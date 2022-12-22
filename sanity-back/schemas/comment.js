@@ -5,14 +5,24 @@ export default {
   fields: [
     {
       name: "postedBy",
-      title: "Posted By",
-      type: "reference",
-      to: [{ type: "user" }]
+      title: "PostedBy",
+      type: "postedBy",
     },
     {
       name: "comment",
       title: "Comment",
       type: "string"
-    }
+    },
+    {
+      name: "likes",
+      title: "Likes",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "user" }],
+        },
+      ],
+    },
   ]
 };
